@@ -28,15 +28,14 @@ class ArticlesController < ApplicationController
         end    
     end
 
-    def update         
+    def update        
         if @article.update(article_params)
-            flash[:notice] = "article was updated melo"   
-            redirect_to @article     
+          flash[:notice] = "Article was updated successfully."
+          redirect_to @article
         else
-            render 'edit'
+          render 'edit'
         end
-    
-    end 
+    end
 
     def destroy        
         @article.destroy
